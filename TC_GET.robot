@@ -19,7 +19,7 @@ Get Books
     Log To Console    ${response.content}
 Get book by id
         Create Session    fetchdata    ${base_url} 
-        ${response}    Get Request    fetchdata    /booking/${book_id}
+        ${response}    GET On Session   fetchdata    /booking/${book_id}
         ${actual_code}    Convert To String    ${response.status_code}
         Should Be Equal    ${actual_code}    200    
         Log To Console    ${response.status_code}
